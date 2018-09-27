@@ -1,27 +1,21 @@
 public class ArrayDemo{
   public static void printArray(int[]ary){
-    String ans = "[";
+    String ans = "{";
     for (int i =0;i<ary.length-1;i++) {
       ans += ary[i] + ", ";
     }
-    System.out.print(ans+ary[ary.length-1]+"]");
+    System.out.println(ans+ary[ary.length-1]+"}");
   }
   public static void printArray(int[][]ary){
-    String ans1 = "[";
-    for (int i =0;i<ary[1].length-1;i++) {
-      ans1 += ary[1][i] + ", ";
-    }
-    System.out.print(ans1+ary[ary[1].length-1]+"]");
-    String ans2 = "[";
-    for (int i =0;i<ary[2].length-1;i++) {
-      ans2 += ary[2][i] + ", ";
-    }
-    System.out.print(ans2+ary[ary[2].length-1]+"]");
+    System.out.print("{");
+    printArray(ary[0]);
+    printArray(ary[1]);
+    System.out.print("}");
   }
   public static void main(String[] args){
-    int[] ary=new int[5];
-    int[][] ary2 = new int[2][3];
-    printArray(ary);
-    printArray(ary2);
+    int[] array=new int[5];
+    int[][] array2 = new int[2][3];
+    printArray(array);
+    printArray(array2);
   }
 }
