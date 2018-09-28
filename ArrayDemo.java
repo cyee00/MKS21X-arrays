@@ -27,15 +27,49 @@ public class ArrayDemo{
     }
     return ans;
   }
+  public static void fill2D(int[][] vals){
+    for (int i=0;i<vals[0].length;i++) {
+      if (i==0) {
+      vals[0][i]=3;
+    } else
+      vals[0][i]=1;
+    }
+    for (int i=0;i<vals[1].length;i++) {
+      if (i==1) {
+      vals[1][i]=3;
+    } else
+      vals[1][i]=1;
+    }
+    printArray(vals);
+  }
+  public static int[][] fill2DCopy(int[][] vals){
+    int[][] copiedArray = new int[vals.length][vals[0].length];
+    for (int i=0;i<vals[0].length;i++) {
+      System.out.print(vals[0][i]);
+      if (vals[0][i]<0) {
+        copiedArray[0][i]=3;
+      } else copiedArray[0][i]=1;
+    }
+    for (int i=0;i<vals[1].length;i++) {
+      System.out.print(vals[1][i]);
+      if (vals[1][i]<0) {
+        copiedArray[1][i]=3;
+      } else copiedArray[1][i]=1;
+    }
+    return copiedArray;
+  }
   public static void main(String[] args){
     int[] array=new int[5];
     int[][] array2 = new int[][] {
-      {0,0,3,0},
-      {0,1,2,3},
+      {0,-5,3,0},
+      {0,1,2,-2},
     };
     printArray(array);
     System.out.print("\n");
     printArray(array2);
-    System.out.print("\n"+countZeros2D(array2));
+    System.out.print("\n"+countZeros2D(array2)+"\n");
+    fill2D(array2);
+    System.out.print("\n");
+    printArray(fill2DCopy(array2));
   }
 }
